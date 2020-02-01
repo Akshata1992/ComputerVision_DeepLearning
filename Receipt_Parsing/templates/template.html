@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset "utf-8">
+  <title>Parent Template</title>
+  <style>
+body {
+  background-color: white;font-family: 'Comic Sans MS', cursive, sans-serif; color:black; 
+  font-style:italic; 
+  background-image:url('https://annerogersvirtualpa.co.uk/wp-content/uploads/2016/04/Pile-of-receipts-blog.jpg');
+  background-repeat: no-repeat;
+  background-size:100vw 100vh;
+}
+
+.logo {
+	background-color: #D3D3D3;
+	padding: 10px;
+	color: black;
+}
+
+.menu{
+	font-size:20px;
+	color:black;
+}
+
+</style>
+  <!--<link rel="stylesheet" href="{{url_for ('static',filename='css/template.css')}}">-->
+</head>
+<body>
+  <header>
+    <div class = "container">
+	  <h2 class = "logo">Welcome to Receipt Parsing.</h2>
+		<h3 class = "logo",>Upload a receipt image to extract its content.</h3>
+	  <strong><nav>
+	    <ul class="menu">
+		  <li><a href="{{url_for('home')}}">Home</a></li>
+		  <li><a href="{{url_for('upload')}}">Upload</a></li>
+		</ul>
+	    </nav></strong>
+	</div>
+  </header>
+  
+  {% block content%}
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>  
+ <title> Upload Image </title>
+ </head>
+ <body> 
+   {% extends "template.html" %}
+   {% block content %}
+   {% if msg %}
+   <h1>{{msg}}</h1>
+   {% endif %} 
+
+    <h1> Upload new File </h1>
+
+    <form method=post enctype=multipart/form-data>
+    <p><input type=file name=file>
+       <input type=submit value=Upload >
+    </form>
+
+    <h1>Result:</h1>
+    {% if check_image == True %}
+       <p style="font-size:100%;color:white"> Yes!,it is a Receipt </p>
+	   
+	{% else %}
+		<p style="font-size:120%;color:white;font-size"> Please upload a receipt image in png/jpg/jpeg format</p>
+	
+    {% endif %}
+	
+    {% if extracted_text %}   
+      <p style="font-size:80%;color:white"> The extracted text from the image above is: <b> {{ extracted_text }}</b></p>
+  
+    {% else %}
+     <p style="font-size:60%;color:white"> The extracted text will be displayed here: </p>
+	  
+    {% endif %}
+	{% endblock %}
+ </body>
+</html>
